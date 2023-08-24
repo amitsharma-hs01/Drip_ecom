@@ -1,15 +1,23 @@
 .bubbles{
-    position:relative;
+    position: absolute;
     display: flex;
+    z-index: 1;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
 }
 .bubbles span{
     position: relative;
-    width:30px;
-    height:30px;
-    background-color: #4fc3dc;
-    margin: 0 4px;
+    width:10px;
+    height:10px;
+    background-color: #ffffff;
+    margin: 0 10px;
     border-radius: 50%;
-    /* animation: animate 15s linear infinite; */
+    box-shadow: 0 0 10px #3d4d12,
+    0 0 50px #ffffff,
+    0 0 100px #ffffff;
+     animation: animate 15s linear infinite;
 }
 @keyframes animate{
     0%{

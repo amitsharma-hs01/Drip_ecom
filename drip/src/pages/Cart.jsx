@@ -1,12 +1,13 @@
 import React from 'react'
 import Layout from '../components/Layout'
-function Home() {
+
+function Cart() {
   return (
-  
-    <Layout>
-    <div >Home</div>
+    <Layout  headerType="sticky">
+    <div>cart</div>
     </Layout>
+
   )
 }
 
-export default Home
+export default Cart
