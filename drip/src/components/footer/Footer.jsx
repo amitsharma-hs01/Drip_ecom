@@ -3,7 +3,6 @@ import React from 'react'
 function Footer() {
   return (
     <div style={{
-        backgroundColor:"#28282b",
         display:"flex",
         justifyContent:"center",
         alignItems:"center",

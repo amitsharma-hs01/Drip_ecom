@@ -5,7 +5,6 @@ import Favorites from "./pages/Favorites";
 import Account from "./pages/Account";
 import Layout from "./components/Layout"
 
-
 function App() {
   return (
     <Layout>

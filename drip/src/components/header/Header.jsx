@@ -15,43 +15,47 @@ function Header() {
       const head=document.querySelector(".header")
   
       head.classList.add('sticky',window.scrollY >5)
+      document.querySelector(".nav").style.display="flex";
   }
   
  
   window.addEventListener("scroll",handleScroll,{once:true})
 
   return (
+    <>
     <div key="header" className={`header`}>
       <Bubbles/>
+      <Link to="/">
       <div key="logoCont" className='logoCont'>
          <img src={logoText} id="logoText" alt=''/>
       </div>
-      <ul className="nav">
-        <li key ="0" className="search-box">
-          <input type="text" name="search-input" id="search-input" style={{
-          
-          }} /> 
-          <img src={searchIcon}alt="" className='icon' />
-        </li>
-
-        <Link to="/account">
-        <li key="1"><img src={userIcon} alt="" className="icon" /></li>
-        </Link>
-
-        <Link to="/favorites">
-        <li key="2">
-          <img src={favoriteIcon} alt="" className="icon" /></li>
-        </Link>
-
-        <Link to="/cart">
-        <li key="3">
-          <img src={cartIcon} alt="" className="icon" />
-        </li>
-        </Link>
-
-      </ul>
+      </Link>
+     
       
     </div>
+    <ul className="nav">
+
+<li key ="0" className="search-box">
+  <img src={searchIcon}alt="" className='icon' />
+</li>
+
+<Link to="/account">
+<li key="1"><img src={userIcon} alt="" className="icon" /></li>
+</Link>
+
+<Link to="/favorites">
+<li key="2">
+  <img src={favoriteIcon} alt="" className="icon" /></li>
+</Link>
+
+<Link to="/cart">
+<li key="3">
+  <img src={cartIcon} alt="" className="icon" />
+</li>
+</Link>
+
+</ul>
+    </>
   )
 }
 
