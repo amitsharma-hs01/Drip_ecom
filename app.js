@@ -3,11 +3,14 @@ dotenv.config()
 import express from 'express'
 import { connectDb } from "./Database.js";
 import {authRouter} from "./routes/authRoutes.js";
-import bodyParser from "body-parser";
+import bodyParser from "body-parser"
+import cors from "cors";
+
 
 const app=express();
 
 //middleware
+app.use(cors());
 app.use(bodyParser.json())
 
 //routes

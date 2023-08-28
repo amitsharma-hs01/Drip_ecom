@@ -4,6 +4,7 @@ import Cart from "./pages/Cart";
 import Favorites from "./pages/Favorites";
 import Account from "./pages/Account";
 import Layout from "./components/Layout"
+import Login from "./pages/login/Login";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/favorites" element={<Favorites/>}/>
         <Route path="/account" element={<Account/>}/>
+        <Route path="/login" element={<Login/>} />
       </Routes>
     </Layout>
   );

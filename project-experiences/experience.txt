@@ -2,3 +2,9 @@
 
 -->case 1 -
     I wanted to have a nice intro banner so i decided to make a banner that will turn into navbar , i took inspiration from an online video and made a banner that have some poppig start objects along with logo and which on scroll shrinks down to a navbar . After i started using that same header in different pages i started facing some minor issues like , every time a route is switched the header went into full screen banner state and also i wanted to make the scroll event work only on home route , along the way of solving it i learned to control event listners using conditions and also using useLocation hook for better route based conditional implementation , but along the way i decided to make the animation trigger for only once as the main purpose was to have a intro ,later  i might consider  using this animation as a loader
+
+2--> login and signup page , animation is made by stacking up the login and signup form into each other and managing their opacity and zindex for their respective modes , the screen is separeated into half two panel coulmns and they container the image and the switching options , apart from that the moving cover is a pseudo element of the entire page container
+
+3--> started working with the login page funcitonality , using react-toastify for toast notifications , at first mistakely installed in on the server root.using axios to make requests
+
+4-->using concurrently for running the servern and client simultaneously and also using cors to avoid origin issues as the client and server are running on different port
