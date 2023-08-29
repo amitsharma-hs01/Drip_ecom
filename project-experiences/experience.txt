@@ -8,3 +8,24 @@
 3--> started working with the login page funcitonality , using react-toastify for toast notifications , at first mistakely installed in on the server root.using axios to make requests
 
 4-->using concurrently for running the servern and client simultaneously and also using cors to avoid origin issues as the client and server are running on different port
+
+5-->using proxy in package json is kind of mandatory.Another problem arised with login request in axios previously i made the login api to be get method mistakely and the api behaved unexpectedly and i always sent the req data as response all worked fine after using post method
+
+6-->use the pointer event propety to none so that the screen is not clickable while the request is been made , another instance was i wanted to add the focus features by which when pressed enter on a form the focus should be moved to next input and if it's the last input then it should submit the form , the strategy was to use select all elements of input and then by accessing the inputs array accesing the inputs[i+1] and make it focued by adding event listener to the input[i] ;
+
+7--> for the strong password implementation the color of the border of input on focus can be managed as 
+const input = document.getElementById('myInput');
+
+// Add a focus event listener
+input.addEventListener('focus', function () {
+  // Change the border style when the input is focused
+  input.style.border = '2px solid #007bff'; // Change the border color to blue (adjust as needed)
+});
+
+// Add a blur event listener
+input.addEventListener('blur', function () {
+  // Change the border style when the input loses focus
+  input.style.border = '1px solid #ccc'; // Change the border color to a default color (adjust as needed)
+});
+
+8--> first time i used the second argument of setState that calls a function after the state is updated, used it for strong password evaluation to make sure the password value is correct and updated before the function call,but a quick realization that the second argument can only be used in class component , so i had to use useEffect 

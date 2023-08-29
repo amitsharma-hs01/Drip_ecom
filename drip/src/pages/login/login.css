@@ -68,8 +68,11 @@
     grid-template-columns: 15% 85%;
     padding: 0 0.4rem;
     position: relative;
+    line-height: 55px;
   }
-  
+  .input-field p{
+    cursor: default;
+  }
   .input-field i {
     text-align: center;
     line-height: 55px;

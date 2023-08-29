@@ -9,9 +9,8 @@ import cartIcon from "./assets/bag-shopping-solid.svg"
 import { Link } from 'react-router-dom'
 
 function Header() {
-  
-  const handleScroll =()=>{
-     
+
+  const handleScroll = (e)=>{
       const head=document.querySelector(".header")
   
       head.classList.add('sticky',window.scrollY >5)

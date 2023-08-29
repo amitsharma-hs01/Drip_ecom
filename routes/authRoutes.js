@@ -5,7 +5,7 @@ import { isAdmin, requireSignin } from "../middleware/authMiddleware.js";
 export const authRouter=express.Router()
 
 authRouter.post('/register',registerController)
-authRouter.get("/login",loginController)
+authRouter.post("/login",loginController)
 authRouter.get('/test',requireSignin,isAdmin,(req,res)=>{
     res.send("tresting route")
 })

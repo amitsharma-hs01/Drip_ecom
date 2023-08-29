@@ -2,7 +2,7 @@ import { comparePassword, hashPassword } from "../helpers/authhelpers.js";
 import userModel from "../models/userModel.js";
 import JWT from "jsonwebtoken";
 //New user Registration controller
-export const registerController=async (req,res)=>{
+export const registerController=async (req,res)=>{ 
   try{
     const {name,email,password,number}=req.body
 
@@ -21,7 +21,6 @@ export const registerController=async (req,res)=>{
         res.status(200).send({
         success:true,
         message:"registered",
-        user:req.body
     }))
   } catch(err){
     console.log(err)
@@ -39,7 +38,7 @@ export const loginController = async (req,res)=>{
     const {email,password}=req.body
     const user=await userModel.findOne({email})
     if(!user){
-      return res.status(404).send({
+      return res.status(200).send({
         success:false,
         message:"No user found"
       })
@@ -55,7 +54,13 @@ export const loginController = async (req,res)=>{
     res.send({
       success:true,
       message:"loggin successfull",
-      token
+      token,
+      user:{
+      id:user._id,
+      name:user.name,
+      email:user.email,
+      number:user.number
+      }
     })
      } catch (error) {
       console.log(error)
