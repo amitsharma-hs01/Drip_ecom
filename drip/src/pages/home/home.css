@@ -1,0 +1,7 @@
+.bodyCont{
+    position: relative;
+    width: 100%;
+    background-color: #cacaca;
+    min-height: 100vh;
+    overflow: scroll;
+}

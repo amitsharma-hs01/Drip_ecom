@@ -6,6 +6,8 @@ import searchIcon from "./assets/magnifying-glass-solid.svg"
 import userIcon from "./assets/user-solid.svg"
 import favoriteIcon from "./assets/heart-solid.svg"
 import cartIcon from "./assets/bag-shopping-solid.svg"
+import homeIcon from "./assets/home.svg"
+
 import { Link } from 'react-router-dom'
 
 function Header() {
@@ -34,9 +36,16 @@ function Header() {
     </div>
     <ul className="nav">
 
+
 <li key ="0" className="search-box">
   <img src={searchIcon}alt="" className='icon' />
 </li>
+
+
+<Link to="/">
+<li key="10"><img src={homeIcon} alt="" className="icon" /></li> 
+</Link>
+
 
 <Link to="/account">
 <li key="1"><img src={userIcon} alt="" className="icon" /></li>

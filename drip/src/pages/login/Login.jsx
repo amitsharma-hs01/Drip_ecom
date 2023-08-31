@@ -5,14 +5,16 @@ import loginvector from "../../assets/login.png"
 import { toast } from 'react-toastify'
 import axios from 'axios'
 import {useNavigate} from "react-router-dom"
-import { useAuth } from '../../context/authcontext'
+import { useAuth } from '../../context/authContext'
 
+ 
 
-function Login() {
+function Login(props) {
   const body=document.querySelector("body");
   const navigate= useNavigate();
-
+ 
   const [auth,setAuth]=useAuth();
+
 
   const handleSignupAnimation = () => {
     resetInputs();
@@ -102,7 +104,9 @@ function Login() {
             ...res.data.user
           }
         }))
-        navigate("/");
+        if(!props.goBack){
+          navigate("/")
+        }
       }
       else{
         toast.error(res.data.message)
@@ -147,20 +151,23 @@ function Login() {
       if(res.data.success){
         toast.success(res.data.message)
         const loginres=await axios.post("http://localhost:8000/api/v1/auth/login",{email,password})
+        console.log(loginres.data)
         setAuth({
           ...auth,
+          token:loginres.data.token,
           user:{
             ...loginres.data.user
-          },
-          token:loginres.data.token
-        });
+          }
+        })
         localStorage.setItem("authData",JSON.stringify({
           token:loginres.data.token,
           user:{
             ...loginres.data.user
           }
         }))
-        navigate("/")
+        if(!props.goBack){
+          navigate("/")
+        }
       }
       else{
         toast.error(res.data.message)
