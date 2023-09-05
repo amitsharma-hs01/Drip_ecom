@@ -16,4 +16,10 @@ authRouter.get('/test',requireSignin,isAdmin,(req,res)=>{
 //authentication route
 authRouter.get('/authenticate',requireSignin,((req,res)=>{
     res.status(200).send({ok:true})
-}))
+})) 
+
+authRouter.post("/admin-auth",requireSignin,isAdmin,(req,res)=>{
+    res.status(200).send({
+        ok:true
+    })
+})

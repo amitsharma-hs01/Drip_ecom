@@ -6,6 +6,8 @@ import Account from "./pages/AuthenticatedPages/account/Account";
 import Layout from "./components/Layout"
 import Login from "./pages/login/Login";
 import Private from "./components/Routes/Private";
+import AdminDashboard from "./pages/admin/adminDashboard/AdminDashboard";
+import AdminRoute from "./components/Routes/AdminRoute";
 
 function App() {
   return ( 
@@ -19,6 +21,10 @@ function App() {
         <Route path="/account" element={<Private/>}>
            <Route path="" element={<Account/>}/>
         </Route>
+        
+        <Route path="/admin" element={<AdminRoute/>}>
+          <Route path="admin-dashboard" element={<AdminDashboard/>} />
+          </Route>
 
         <Route path="/login" element={<Login/>} />
       </Routes>

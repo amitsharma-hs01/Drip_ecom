@@ -52,7 +52,7 @@
   
   .title {
     font-size: 2.2rem;
-    color: #444;
+    color: #5193b3;
     margin-bottom: 10px;
   }
   
@@ -60,7 +60,7 @@
     max-width: 380px;
     min-width: 250px;
     width: 100%;
-    background-color: #f0f0f0;
+    background-color: #31ca9022;
     margin: 10px 0;
     height: 55px;
     border-radius: 55px;
@@ -76,7 +76,7 @@
   .input-field i {
     text-align: center;
     line-height: 55px;
-    color: #acacac;
+    color: #64c4c3;
     transition: 0.5s;
     font-size: 1.1rem;
   }
@@ -88,11 +88,11 @@
     line-height: 1;
     font-weight: 600;
     font-size: 1.1rem;
-    color: #333;
+    color: #5193b3;
   }
   
   .input-field input::placeholder {
-    color: #aaa;
+    color: #64c4c3;
     font-weight: 500;
   }
   
@@ -128,12 +128,12 @@
   
   .btn {
     width: 150px;
-    background-color: #98989b;
+    background-color: #31ca9022;
     border: none;
     outline: none;
     height: 49px;
     border-radius: 49px;
-    color: #444;
+    color: #64c4c3;
     text-transform: uppercase;
     font-weight: 600;
     margin: 10px 0;
@@ -142,8 +142,8 @@
   }
   
   .btn:hover {
-    background-color: #444;
-    color:#acacac;
+    background-color: #31ca9088;
+    color:#5193b3;
   }
   .panels-container {
     position: absolute;
@@ -163,7 +163,7 @@
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
-    background-image: linear-gradient(-45deg, #68686b 0%, #ffffff 100%);
+    background-image: linear-gradient(-45deg, #64ffc3 0%, #ffffff 100%);
     transition: 1.8s ease-in-out;
     border-radius: 50%;
     z-index: 6;
@@ -195,7 +195,7 @@
   }
   
   .panel .content {
-    color: #000000;
+    color: #5193b3;
     transition: transform 0.9s ease-in-out;
     transition-delay: 0.6s;
   }
@@ -214,8 +214,8 @@
   .btn.transparent {
     margin: 0;
     background: none;
-    border: 2px solid #000000;
-    color:#000000;
+    border: 2px solid #5193b3;
+    color:#5193b3;
     width: 130px;
     height: 41px;
     font-weight: 600;

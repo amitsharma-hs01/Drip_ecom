@@ -36,10 +36,11 @@ function Header() {
     </div>
     <ul className="nav">
 
-
+<Link to="/">
 <li key ="0" className="search-box">
   <img src={searchIcon}alt="" className='icon' />
 </li>
+</Link>
 
 
 <Link to="/">

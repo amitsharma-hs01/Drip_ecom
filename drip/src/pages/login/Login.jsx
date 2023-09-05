@@ -136,7 +136,7 @@ function Login(props) {
         toast.error("invalid phone number");
         return;
       }
-      if(strong<4){
+      if(strong<4){ 
         toast.error("Please use a strong password");
         return;
       }

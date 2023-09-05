@@ -4,7 +4,7 @@ import JWT from "jsonwebtoken";
 //New user Registration controller
 export const registerController=async (req,res)=>{ 
   try{
-    const {name,email,password,number}=req.body
+    const {name,email,password,number,role}=req.body
 
     //existing user
     const existingUser=await userModel.findOne({email})
@@ -17,7 +17,7 @@ export const registerController=async (req,res)=>{
     //register
     const hashedPassword=await hashPassword(password)
     console.log(hashedPassword)
-    const newuser =await new userModel({name,email,password:hashedPassword,number}).save().then(
+    const newuser =await new userModel({name,email,password:hashedPassword,number,role}).save().then(
         res.status(200).send({
         success:true,
         message:"registered",
@@ -66,7 +66,7 @@ export const loginController = async (req,res)=>{
       console.log(error)
     return res.status(500).send({
       success:false,
-      message:"loggin failed"
+      message:"login failed"
     }) 
    }
 }
