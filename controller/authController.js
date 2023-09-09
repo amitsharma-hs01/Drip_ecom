@@ -55,11 +55,12 @@ export const loginController = async (req,res)=>{
       success:true,
       message:"loggin successfull",
       token,
-      user:{
+      user:{ 
       id:user._id,
       name:user.name,
       email:user.email,
-      number:user.number
+      number:user.number,
+      role:user.role?user.role:"0"
       }
     })
      } catch (error) {

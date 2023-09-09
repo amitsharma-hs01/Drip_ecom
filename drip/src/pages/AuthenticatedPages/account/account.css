@@ -1,8 +1,160 @@
 .accountCont{
     position: relative;
     width:100vw;
-    min-height: 100vh;
+    overflow: hidden;
+    min-height: 600px;
+    display: grid;
+    grid-template-columns: 300px auto;
+    color:#484848;
+    font-family:Lucida Sans;
+}
+.accNavCont{
+    margin:20px;
+    background: #95d7f7;
+    border-radius:20px;
+    box-shadow: 10px solid black;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+}
+.profile{
+    width:90%;
+    height:100px;
+    background-color: #ffffff88;
+    margin-top: 10px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.avatar{
+    height: 60px;
+    width:60px;
+    border-radius: 50%;
+    background-color: #ffffffaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    font-size: 2.5em;
+    font-family:cursive;
+    margin: 5px;
+}
+.logoutBtn{
+    height: 40px;
+    width:40px;
+    border-radius: 50%;
+    margin:5px;
+    border:none;
+    cursor: pointer;
+    transition: .5s;
+}
+.logoutBtn:hover{
+    background-color: peachpuff;
+}
+
+
+.link{
+   color:#484848;
+   text-decoration: none;
+   font-weight: 400;
+}
+.link:active{
+    color:#484848;
+}
+.menu{
+    margin-top: 20px;
+    list-style: none;
+    width:100%;
+}
+.option{
+    width: 100%;
+    margin-top: 10px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: relative;
+    color: #686868;
+}
+.option p{
+    width:60%;
+}
+.option i{
+    font-size: 100%;
+    margin-right: 5px;
+}
+.option .before{
+    content: "";
+    background: #484848;
+    width: 0px;
+    height: 100%;
+    align-self: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+
+.option:hover .before{
+  width:5px;
+}
+.option:hover{
+    color:#484848;
+}
+
+.active .before{
+    width:5px;
+}
+.active{
+    color:#484848;
+}
+
+.accContent{
+    margin:20px;
+    background: blue;
+}
+
+@media (max-width:550px){
+    .accountCont{
+        display: flex;
+       flex-direction: column;
+    }
+    .accNavCont{
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    .menu{
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        height: 50px;
+    }
+    .option{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin:10px;
+    }
+    .option i{
+        font-size: 1.5em;
+    }
+    .option p{
+        width: auto;
+    }
+    .active span.before{
+        width:0px;
+    }
+    .option:hover span.before{
+        width:0px;
+    }
+    .accContent{
+        min-height: 400px;
+    }
 }

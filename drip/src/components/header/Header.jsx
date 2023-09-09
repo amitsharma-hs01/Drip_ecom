@@ -10,8 +10,9 @@ import homeIcon from "./assets/home.svg"
 
 import { Link } from 'react-router-dom'
 
-function Header() {
 
+function Header() {
+  
   const handleScroll = (e)=>{
       const head=document.querySelector(".header")
   
@@ -31,8 +32,6 @@ function Header() {
          <img src={logoText} id="logoText" alt=''/>
       </div>
       </Link>
-     
-      
     </div>
     <ul className="nav">
 

@@ -9,7 +9,7 @@ function Layout(props) {
    <>
       <Header/>
       
-        <div style={{minHeight:"70vh",width:"100%",paddingTop:"50px"}}>
+        <div style={{minHeight:"70vh",width:"100vw",paddingTop:"50px"}}>
           <ToastContainer/>
           {props.children}</div>
       <Footer/>
