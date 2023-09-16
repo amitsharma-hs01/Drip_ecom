@@ -14,7 +14,11 @@ import UserCart from "./components/userDashboard/UserCart"
 import UserChangePass from "./components/userDashboard/UserChangePass"
 import UserOrders from "./components/userDashboard/UserOrders"
 import UserAddress from "./components/userDashboard/UserAddress";
-
+import AdminProfile from "./components/adminDashboard/AdminProfile";
+import ManageUsers from "./components/adminDashboard/ManageUsers";
+import AddCategory from "./components/adminDashboard/AddCategory"
+import ManageOrders from "./components/adminDashboard/ManageOrders"
+import ManageProducts from "./components/adminDashboard/ManageProducts";
 
 function App() {
   return (
@@ -37,7 +41,11 @@ function App() {
 
         <Route path="/admin" element={<AdminRoute />}>
           <Route path="" element={<AdminDashboard />} >
-            
+            <Route path="" element={<AdminProfile/>} /> 
+            <Route path="manage-users" element={<ManageUsers/>}/>
+            <Route path="manage-orders" element={<ManageOrders/>}/>
+            <Route path="category" element={<AddCategory/>} />
+            <Route path="products" element={<ManageProducts/>}/> 
           </Route>
         </Route>
         <Route path="/login" element={<Login />} />
