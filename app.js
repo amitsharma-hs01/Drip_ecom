@@ -40,7 +40,7 @@ const port = process.env.PORT || 5000
 
 //rest api
 app.get("*",function(req,res){
-    res.sendFile(path.join(__dirname,'./drip/build/index.html'),function(err){
+    return res.sendFile(path.join(__dirname,'./drip/build/index.html'),function(err){
          res.sendStatus(500).send(err)
     })
 })
