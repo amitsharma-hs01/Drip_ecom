@@ -20,7 +20,6 @@ const __dirname=path.dirname(__filename)
 //middleware
 app.use(cors());
 app.use(bodyParser.json())
-app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname,"./drip/build")))
 
 //routes
