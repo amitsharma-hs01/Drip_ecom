@@ -70,6 +70,12 @@ export const getAllController =async(req,res)=>{
 export const getOneController=async(req,res)=>{
   try {
     const category=await categoryModel.findOne({slug:req.params.slug})
+    if(!category){
+      return res.send({
+        success:false,
+        message:"category not found"
+      })
+    }
     res.status(200).send({
       success:true,
       message:"category fetched succefully",

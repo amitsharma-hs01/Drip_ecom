@@ -1,13 +1,18 @@
 import React from 'react'
 import "./home.css"
-import {useAuth} from "../../context/authContext.js"
+import Productsgrid from '../../components/Productsgrid/Productsgrid';
 
 function Home() {
-  const [auth]=useAuth();
+
   return (
   
     <div className='bodyCont'>
-      {JSON.stringify(auth)}
+      <div className="banner">
+      <img src={require("./banner.jpg")} alt="" width="95%"/>
+      </div>
+      <Productsgrid category="New-Arrivals"/>
+      <Productsgrid category="Most-Trending"/>
+      <Productsgrid category="Sneaker"/>
     </div>
     
   )

@@ -8,12 +8,12 @@
     position: relative;
     min-width:10px;
     height:10px;
-    background-color: #ffffff;
+    background-color: #9597f7;
     margin: 0 10px;
     border-radius: 50%;
     box-shadow: 0 0 10px #3d4d12,
-    0 0 50px #ffffff,
-    0 0 100px #ffffff;
+    0 0 50px #95d7f7,
+    0 0 100px #95d7f7;
      animation: animate 15s linear infinite;
      z-index: 2;
 }

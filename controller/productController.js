@@ -1,5 +1,6 @@
 import slugify from "slugify";
 import productModel from "../models/productModel.js";
+import categoryModel from "../models/categoryModel.js"
 
 export const createProductController = async (req, res) => {
     try {
@@ -7,32 +8,32 @@ export const createProductController = async (req, res) => {
         //validation
         switch (true) {
             case !name:
-                return res.status(500).send({
+                return res.send({
                     success: false,
                     message: "Please provide name"
                 })
             case !description:
-                return res.status(500).send({
+                return res.send({
                     success: false,
                     message: "Please provide description"
                 })
             case !price:
-                return res.status(500).send({
+                return res.send({
                     success: false,
                     message: "Please provide price"
                 })
             case !category:
-                return res.status(500).send({
+                return res.send({
                     success: false,
                     message: "Please provide category"
                 })
             case !quantity:
-                return res.status(500).send({
+                return res.send({
                     success: false,
                     message: "Please provide quantity"
                 })
             case !imageLink:
-                return res.status(500).send({
+                return res.send({
                     success:false,
                     message:"please provide image link"
                 })
@@ -54,7 +55,7 @@ export const createProductController = async (req, res) => {
 
 export const getAllProductController =async (req,res)=>{
   try {
-    const products=await productModel.find({}).populate("category").limit(20).sort({createdAt:-1})
+    const products=await productModel.find({}).populate("category").sort({createdAt:-1})
     res.status(200).send({
         success:true,
         message:"products fetched successfully",
@@ -153,4 +154,25 @@ export const updateProductController = async (req, res) => {
         })
         console.log(error)
     }
+}
+
+export const getProductByCategoryController=async (req,res)=>{
+   try {
+    const {category}=req.params;
+    const {_id}=await categoryModel.findOne({slug:category})
+    console.log(_id);
+    const products=await productModel.find({category:_id})
+
+    res.status(200).send({
+        success:true,
+        message:"products fetched",
+        products
+    })
+
+   } catch (error) {
+    console.log(error)
+    res.status(500).send({
+        success:false
+    })
+   }
 }

@@ -1,5 +1,5 @@
 import express from "express"
-import { createProductController, deleteProductController, getAllProductController, getOneProductController, updateProductController } from "../controller/productController.js";
+import { createProductController, deleteProductController, getAllProductController, getOneProductController, updateProductController,getProductByCategoryController } from "../controller/productController.js";
 import { requireSignin,isAdmin } from "../middleware/authMiddleware.js";
 
 
@@ -15,4 +15,6 @@ productRouter.get("/get-one/:slug",getOneProductController)
 productRouter.delete("/delete/:id",requireSignin,isAdmin,deleteProductController)
 
 productRouter.post("/update/:id",requireSignin,isAdmin,updateProductController)
+
+productRouter.get("/get-by-category/:category",getProductByCategoryController)
 export default productRouter;
