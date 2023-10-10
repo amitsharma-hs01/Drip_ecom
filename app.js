@@ -39,6 +39,8 @@ const port = process.env.PORT || 5000
 }); 
 
 //rest api
-app.use("*",function(req,res){
-    res.sendFile(path.join(__dirname,'./drip/build/index.html'))
+app.get("*",function(req,res){
+    res.sendFile(path.join(__dirname,'./drip/build/index.html'),function(err){
+         res.sendStatus(500).send(err)
+    })
 })
